@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Explorer | ApexPlanet Internship</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="loader">
+    <div class="spinner"></div>
+</div>
+    <!-- ================= NAVBAR ================= -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">🎬 Movie Explorer</div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#movies">Popular</a></li>
+                <li><a href="#movies">Top Rated</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="themeToggle">🌙</button>
+        </nav>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <h1>Welcome to Movie Explorer</h1>
+            <p>
+                Discover trending movies, search your favorites,
+                and enjoy a fully responsive interactive web experience.
+            </p>
+
+            <a href="#search" class="hero-btn">Explore Movies</a>
+        </div>
+
+        <!-- ========== IMAGE CAROUSEL ========== -->
+        <div class="carousel-container">
+
+            <button class="carousel-btn prev">&#10094;</button>
+
+            <div class="carousel-slide">
+                <img src="images/m1.webp" alt="Movie Banner 1" class="slide active">
+                <img src="images/m2.webp" alt="Movie Banner 2" class="slide">
+                <img src="images/m3.webp" alt="Movie Banner 3" class="slide">
+                                <img src="images/m4.webp" alt="Movie Banner 3" class="slide">
+                                                <img src="images/m6.webp" alt="Movie Banner 3" class="slide">
+
+
+            </div>
+
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- ================= SEARCH SECTION ================= -->
+    <section class="search-section" id="search">
+
+        <h2>🔍 Search Movies</h2>
+        <p>Find any movie instantly using our movie search feature.</p>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Enter movie name...">
+
+            <button id="searchBtn">Search</button>
+        </div>
+    </section>
+
+    <!-- ================= MOVIES SECTION ================= -->
+    <section class="movies-section" id="movies">
+
+        <h2>🔥 Popular Movies</h2>
+
+        <!-- Movie cards will be added dynamically by JavaScript -->
+        <div class="movies-container" id="moviesContainer">
+
+            <!-- Sample Card 1 -->
+            <div class="movie-card">
+                <img src="images/m4.webp" alt="Movie Poster">
+
+                <div class="movie-info">
+                    <h3>Dhurandhar</h3>
+<p>⭐ 8.5</p>
+<p>Release: 2025</p>
+<p>
+A fearless warrior takes on dangerous enemies to uncover hidden truths and protect those he loves. Packed with action, suspense, and powerful performances.
+</p>
+<button class="fav-btn">❤️</button>
+                </div>
+            </div>
+
+            <!-- Sample Card 2 -->
+            <div class="movie-card">
+                <img src="images/m5.webp" alt="Movie Poster">
+
+                <div class="movie-info">
+                  <h3>Stree 2</h3>
+<p>⭐ 8.1</p>
+<p>Release: 2024</p>
+<p>
+The terrifying legend returns as the town faces a new supernatural threat. A perfect mix of horror, comedy, mystery, and thrilling twists.
+</p>
+<button class="fav-btn">❤️</button>
+                </div>
+            </div>
+
+              <div class="movie-card">
+                <img src="images/m6.webp" alt="Movie Poster">
+
+                <div class="movie-info">
+                   <h3>KGF: Chapter 2</h3>
+<p>⭐ 8.2</p>
+<p>Release: 2022</p>
+<p>
+Rocky rises to become the undisputed king of the Kolar Gold Fields while battling powerful enemies, political conspiracies, and his own destiny.
+</p>
+<button class="fav-btn">❤️</button>
+                </div>
+            </div>
+
+  <div class="movie-card">
+                <img src="images/m3.webp" alt="Movie Poster">
+
+                <div class="movie-info">
+                    <h3>The Jungle Book</h3>
+<p>⭐ 7.4</p>
+<p>Release: 2016</p>
+<p>
+Young Mowgli embarks on an unforgettable adventure through the jungle, learning courage, friendship, and survival alongside extraordinary animal companions.
+</p>
+<button class="fav-btn">❤️</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= JOKE API SECTION ================= -->
+    <section class="joke-section">
+
+        <h2>😂 Need a Break?</h2>
+        <p>Click the button below to get a random programming joke.</p>
+
+        <div class="joke-box">
+            <p id="jokeText">
+                Click the button to load a random joke!
+            </p>
+
+            <button id="jokeBtn">Tell Me a Joke</button>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section class="contact-section" id="contact">
+
+        <h2>📩 Contact Us</h2>
+
+        <form class="contact-form">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea
+                rows="5"
+                placeholder="Your Message"
+                required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>🎬 Movie Explorer</h3>
+
+          
+
+            <p>
+                Created by <strong>Alisha Ali</strong> |
+               
+            </p>
+
+            <p>© 2026 Movie Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+<button id="topBtn">⬆</button>
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="script.js"></script>
+</body>
+
+</html>
