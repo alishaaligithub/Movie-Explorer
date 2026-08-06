@@ -1,6 +1,14 @@
-/* ===========================
-   GOOGLE FONT & RESET
-=========================== */
+/* ==========================================
+   MOVIE EXPLORER - PREMIUM UI
+   PART 1
+========================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+        RESET
+========================= */
 
 *{
     margin:0;
@@ -9,553 +17,1979 @@
     scroll-behavior:smooth;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#0f172a;
-    color:white;
-    line-height:1.6;
+html{
+    overflow-x:hidden;
 }
 
-/* ===========================
-        NAVBAR
-=========================== */
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(
+        -45deg,
+        #0f172a,
+        #111827,
+        #1e293b,
+        #0b1120
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientBG 15s ease infinite;
+
+    color:#fff;
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+}
+
+/* Animated Background */
+
+@keyframes gradientBG{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* Smooth Selection */
+
+::selection{
+
+background:#ff4d4d;
+
+color:white;
+
+}
+
+/* =========================
+        HEADER
+========================= */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
 }
+
+/* =========================
+        NAVBAR
+========================= */
 
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 8%;
-    background:#111827;
-    box-shadow:0 3px 10px rgba(0,0,0,.4);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 8%;
+
+background:rgba(17,24,39,.75);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 8px 30px rgba(0,0,0,.35);
+
 }
+
+/* Logo */
 
 .logo{
-    font-size:28px;
-    font-weight:700;
-    color:#ff4d4d;
+
+font-size:30px;
+
+font-weight:700;
+
+color:#ff4d4d;
+
+letter-spacing:1px;
+
+text-shadow:
+
+0 0 10px rgba(255,77,77,.7),
+0 0 25px rgba(255,77,77,.5);
+
 }
 
+/* Navigation */
+
 .nav-links{
-    display:flex;
-    list-style:none;
-    gap:25px;
+
+display:flex;
+
+list-style:none;
+
+gap:30px;
+
+}
+
+.nav-links li{
+
+list-style:none;
+
 }
 
 .nav-links a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    transition:.3s;
+
+position:relative;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+font-size:16px;
+
+transition:.35s;
+
 }
 
 .nav-links a:hover{
-    color:#ff4d4d;
+
+color:#ff4d4d;
+
 }
 
-/* ===========================
-        HERO
-=========================== */
+/* Animated underline */
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:3px;
+
+background:#ff4d4d;
+
+border-radius:30px;
+
+transition:.35s;
+
+}
+
+.nav-links a:hover::after{
+
+width:100%;
+
+}
+
+/* =========================
+      HERO SECTION
+========================= */
 
 .hero{
-    padding:60px 8%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:50px;
-    min-height:90vh;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:60px;
+
+padding:80px 8%;
+
+min-height:90vh;
+
 }
 
+/* Hero Text */
+
 .hero-content{
-    flex:1;
+
+flex:1;
+
+animation:float 5s ease-in-out infinite;
+
 }
 
 .hero-content h1{
-    font-size:55px;
-    margin-bottom:20px;
+
+font-size:60px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+line-height:1.2;
+
 }
 
 .hero-content p{
-    font-size:18px;
-    color:#d1d5db;
-    margin-bottom:30px;
+
+font-size:18px;
+
+color:#d1d5db;
+
+margin-bottom:35px;
+
+max-width:550px;
+
 }
 
+/* Floating Animation */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Explore Button */
+
 .hero-btn{
-    display:inline-block;
-    background:#ff4d4d;
-    color:white;
-    text-decoration:none;
-    padding:14px 30px;
-    border-radius:8px;
-    transition:.3s;
-    font-weight:600;
+
+display:inline-block;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+background:linear-gradient(
+45deg,
+#ff4d4d,
+#ff6b6b
+);
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.4s;
+
+box-shadow:
+
+0 10px 25px rgba(255,77,77,.35);
+
 }
 
 .hero-btn:hover{
-    background:#ff2f2f;
-    transform:translateY(-3px);
+
+transform:
+
+translateY(-5px)
+
+scale(1.05);
+
+box-shadow:
+
+0 0 20px #ff4d4d,
+0 0 40px rgba(255,77,77,.6);
+
 }
 
-/* ===========================
-        CAROUSEL
-=========================== */
+/* =========================
+      CAROUSEL
+========================= */
 
 .carousel-container{
-    flex:1;
-    position:relative;
+
+flex:1;
+
+position:relative;
+
 }
 
 .carousel-slide{
-    position:relative;
-    overflow:hidden;
-    border-radius:15px;
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:20px;
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.45);
+
 }
 
 .slide{
-    display:none;
-    width:100%;
-    height:420px;
-    object-fit:cover;
-    border-radius:15px;
+
+display:none;
+
+width:100%;
+
+height:480px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+transition:.6s;
+
 }
 
 .slide.active{
-    display:block;
+
+display:block;
+
+animation:fade .8s;
+
 }
 
+/* Fade Animation */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:scale(1.05);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* Carousel Buttons */
+
 .carousel-btn{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:rgba(0,0,0,.6);
-    color:white;
-    border:none;
-    font-size:30px;
-    cursor:pointer;
-    padding:12px 16px;
-    border-radius:50%;
-    transition:.3s;
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(10px);
+
+color:white;
+
+font-size:28px;
+
+cursor:pointer;
+
+transition:.35s;
+
+z-index:20;
+
 }
 
 .carousel-btn:hover{
-    background:#ff4d4d;
+
+background:#ff4d4d;
+
+transform:
+
+translateY(-50%)
+
+scale(1.12);
+
 }
 
 .prev{
-    left:15px;
+
+left:20px;
+
 }
 
 .next{
-    right:15px;
+
+right:20px;
+
 }
+
+/* Glow around image */
+
+.carousel-slide::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:20px;
+
+box-shadow:
+
+inset 0 0 80px rgba(0,0,0,.25);
+
+pointer-events:none;
+
+}
+
+/* ==========================================
+   MOVIE EXPLORER - PREMIUM UI
+   PART 2
+   Search Section + Movie Cards
+==========================================*/
+
 
 /* ===========================
       SEARCH SECTION
 =========================== */
 
 .search-section{
-    padding:80px 8%;
+
+    padding:90px 8%;
+
     text-align:center;
+
 }
 
 .search-section h2{
-    font-size:38px;
+
+    font-size:42px;
+
     margin-bottom:15px;
+
+    font-weight:700;
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+.search-section h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-10px;
+
+    transform:translateX(-50%);
+
+    width:80px;
+
+    height:4px;
+
+    border-radius:20px;
+
+    background:#ff4d4d;
+
+}
+
+.search-section p{
+
+    color:#cbd5e1;
+
+    margin-bottom:35px;
+
 }
 
 .search-box{
-    margin-top:35px;
+
     display:flex;
+
     justify-content:center;
-    gap:15px;
+
+    align-items:center;
+
+    gap:18px;
+
     flex-wrap:wrap;
+
 }
+
+
+/* Search Input */
 
 .search-box input{
-    width:420px;
-    max-width:90%;
-    padding:15px;
-    border:none;
-    border-radius:8px;
-    font-size:16px;
+
+    width:500px;
+
+    max-width:100%;
+
+    padding:16px 22px;
+
+    border-radius:50px;
+
+    border:2px solid transparent;
+
+    outline:none;
+
+    font-size:17px;
+
+    background:#1e293b;
+
+    color:white;
+
+    transition:.4s;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+
 }
 
+.search-box input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+.search-box input:focus{
+
+    border-color:#ff4d4d;
+
+    box-shadow:
+
+    0 0 10px rgba(255,77,77,.5),
+
+    0 0 30px rgba(255,77,77,.2);
+
+}
+
+
+/* Search Button */
+
 .search-box button{
-    padding:15px 30px;
-    background:#ff4d4d;
-    color:white;
+
+    padding:16px 32px;
+
     border:none;
-    border-radius:8px;
+
+    border-radius:50px;
+
     cursor:pointer;
-    transition:.3s;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    background:linear-gradient(45deg,#ff4d4d,#ff6b6b);
+
+    color:white;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(255,77,77,.35);
+
 }
 
 .search-box button:hover{
-    background:#ff2f2f;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 0 20px #ff4d4d,
+
+    0 0 40px rgba(255,77,77,.5);
+
 }
+
 
 /* ===========================
       MOVIES SECTION
 =========================== */
 
 .movies-section{
-    padding:80px 8%;
+
+    padding:90px 8%;
+
 }
 
 .movies-section h2{
+
     text-align:center;
-    font-size:38px;
-    margin-bottom:50px;
+
+    font-size:42px;
+
+    margin-bottom:60px;
+
+    position:relative;
+
+    display:inline-block;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
 }
+
+.movies-section h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-10px;
+
+    transform:translateX(-50%);
+
+    width:90px;
+
+    height:4px;
+
+    background:#ff4d4d;
+
+    border-radius:20px;
+
+}
+
+
+/* Movie Grid */
 
 .movies-container{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:35px;
+
 }
 
+
+/* Movie Card */
+
 .movie-card{
-    background:#1e293b;
-    border-radius:15px;
+
+    position:relative;
+
     overflow:hidden;
-    transition:.4s;
-    box-shadow:0 8px 20px rgba(0,0,0,.3);
+
+    border-radius:20px;
+
+    background:#1e293b;
+
+    cursor:pointer;
+
+    transition:.45s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.35);
+
 }
 
 .movie-card:hover{
-    transform:translateY(-10px);
+
+    transform:
+
+    translateY(-12px)
+
+    scale(1.03);
+
+    box-shadow:
+
+    0 25px 50px rgba(0,0,0,.45);
+
 }
+
+
+/* Poster */
 
 .movie-card img{
+
     width:100%;
+
     height:420px;
+
     object-fit:cover;
+
+    transition:.6s;
+
 }
 
+.movie-card:hover img{
+
+    transform:scale(1.12);
+
+}
+
+
+/* Dark Overlay */
+
+.movie-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+    transparent,
+
+    rgba(0,0,0,.75)
+
+    );
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.movie-card:hover::before{
+
+    opacity:1;
+
+}
+
+
+/* Movie Info */
+
 .movie-info{
-    padding:20px;
+
+    padding:22px;
+
+    background:#1e293b;
+
 }
 
 .movie-info h3{
+
+    font-size:22px;
+
     margin-bottom:10px;
+
 }
 
 .movie-info p{
-    margin-bottom:8px;
+
     color:#d1d5db;
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
 }
 
+
+/* Rating */
+
+.movie-info p:first-of-type{
+
+    display:inline-block;
+
+    background:#ff4d4d;
+
+    padding:5px 14px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+
+/* Favorite Button */
+
+.fav-btn{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.fav-btn:hover{
+
+    background:#ff4d4d;
+
+    transform:scale(1.15);
+
+}
+
+
+/* Movie Animation */
+
+.movie-card{
+
+    animation:cardFade .8s ease;
+
+}
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* Glow Effect */
+
+.movie-card:hover{
+
+    border:1px solid rgba(255,77,77,.5);
+
+}
+
+
+/* Common Buttons */
+
+button{
+
+    transition:.4s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* Divider */
+
+.section-divider{
+
+    width:120px;
+
+    height:5px;
+
+    background:#ff4d4d;
+
+    margin:20px auto;
+
+    border-radius:50px;
+
+}
+
+
+/* Smooth Image Loading */
+
+.movie-card img{
+
+    animation:imageFade .8s ease;
+
+}
+
+@keyframes imageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+   MOVIE EXPLORER - PREMIUM UI
+   PART 3
+   Joke Section • Contact Form • Footer
+   Dark Theme • Loader • Scroll Button
+==========================================*/
+
 /* ===========================
-        JOKE
+        JOKE SECTION
 =========================== */
 
 .joke-section{
-    padding:80px 8%;
+
+    padding:100px 8%;
+
     text-align:center;
+
 }
 
 .joke-section h2{
-    font-size:38px;
+
+    font-size:42px;
+
     margin-bottom:15px;
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+.joke-section h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-10px;
+
+    width:80px;
+
+    height:4px;
+
+    background:#ff4d4d;
+
+    border-radius:30px;
+
+}
+
+.joke-section p{
+
+    color:#cbd5e1;
+
 }
 
 .joke-box{
-    background:#1e293b;
-    width:700px;
-    max-width:95%;
-    margin:auto;
-    padding:40px;
-    border-radius:15px;
+
+    margin:45px auto;
+
+    max-width:850px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
 }
 
 #jokeText{
-    margin-bottom:25px;
-    font-size:18px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+    color:#ffffff;
+
 }
 
 #jokeBtn{
-    padding:14px 25px;
-    background:#ff4d4d;
-    color:white;
+
+    padding:16px 35px;
+
     border:none;
-    border-radius:8px;
+
+    border-radius:50px;
+
+    background:linear-gradient(45deg,#ff4d4d,#ff7676);
+
+    color:white;
+
     cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.4s;
+
 }
 
 #jokeBtn:hover{
-    background:#ff2f2f;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 0 20px rgba(255,77,77,.6),
+
+    0 0 45px rgba(255,77,77,.3);
+
 }
 
 /* ===========================
-      CONTACT
+      CONTACT SECTION
 =========================== */
 
 .contact-section{
-    padding:80px 8%;
+
+    padding:100px 8%;
+
 }
 
 .contact-section h2{
+
     text-align:center;
-    font-size:38px;
-    margin-bottom:40px;
+
+    font-size:42px;
+
+    margin-bottom:45px;
+
 }
 
 .contact-form{
-    width:700px;
-    max-width:95%;
+
+    max-width:750px;
+
     margin:auto;
+
     display:flex;
+
     flex-direction:column;
-    gap:20px;
+
+    gap:22px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    padding:45px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
 }
 
 .contact-form input,
+
 .contact-form textarea{
-    padding:16px;
+
+    width:100%;
+
+    padding:18px;
+
     border:none;
-    border-radius:8px;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#1e293b;
+
+    color:white;
+
     font-size:16px;
+
+    transition:.35s;
+
+}
+
+.contact-form input::placeholder,
+
+.contact-form textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+.contact-form input:focus,
+
+.contact-form textarea:focus{
+
+    border:2px solid #ff4d4d;
+
+    box-shadow:0 0 20px rgba(255,77,77,.35);
+
 }
 
 .contact-form textarea{
+
     resize:none;
+
 }
 
 .contact-form button{
-    background:#ff4d4d;
-    color:white;
-    border:none;
+
     padding:16px;
-    border-radius:8px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(45deg,#ff4d4d,#ff7676);
+
+    color:white;
+
+    font-size:18px;
+
     cursor:pointer;
-    transition:.3s;
+
+    transition:.4s;
+
 }
 
 .contact-form button:hover{
-    background:#ff2f2f;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 25px rgba(255,77,77,.45);
+
 }
 
 /* ===========================
-        FOOTER
+          FOOTER
 =========================== */
 
 footer{
-    background:#111827;
-    padding:40px 8%;
+
+    margin-top:80px;
+
+    background:#080d18;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding:50px 8%;
+
     text-align:center;
+
 }
 
 .footer-content h3{
-    margin-bottom:15px;
+
     color:#ff4d4d;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
 }
 
 .footer-content p{
-    margin:8px 0;
-    color:#d1d5db;
+
+    color:#cbd5e1;
+
+    margin:10px 0;
+
 }
 
-/* ===========================
-      TABLET
-=========================== */
+.footer-content strong{
 
-@media(max-width:992px){
-
-.hero{
-    flex-direction:column;
-    text-align:center;
-}
-
-.hero-content h1{
-    font-size:42px;
-}
-
-.movies-container{
-    grid-template-columns:repeat(2,1fr);
-}
+    color:#ffffff;
 
 }
 
 /* ===========================
-      MOBILE
+        DARK / LIGHT MODE
 =========================== */
 
-@media(max-width:768px){
-
-.navbar{
-    flex-direction:column;
-    gap:20px;
-}
-
-.nav-links{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.hero-content h1{
-    font-size:34px;
-}
-
-.hero-content p{
-    font-size:16px;
-}
-
-.slide{
-    height:280px;
-}
-
-.movies-container{
-    grid-template-columns:1fr;
-}
-
-.search-box{
-    flex-direction:column;
-}
-
-.search-box input{
-    width:100%;
-}
-
-.search-box button{
-    width:100%;
-}
-
-.contact-form{
-    width:100%;
-}
-
-}
-
-/* ===========================
-      SMALL MOBILE
-=========================== */
-
-@media(max-width:480px){
-
-.logo{
-    font-size:22px;
-}
-
-.hero-content h1{
-    font-size:28px;
-}
-
-.search-section h2,
-.movies-section h2,
-.contact-section h2,
-.joke-section h2{
-    font-size:28px;
-}
-
-.movie-card img{
-    height:350px;
-}
-
-}
 #themeToggle{
-    padding:10px 15px;
-    background:#ff4d4d;
-    color:#fff;
+
+    padding:12px 18px;
+
     border:none;
-    border-radius:8px;
+
+    border-radius:12px;
+
+    background:#ff4d4d;
+
+    color:white;
+
     cursor:pointer;
-    transition:0.3s;
+
+    transition:.35s;
+
 }
 
 #themeToggle:hover{
-    background:#ff2f2f;
+
+    transform:scale(1.08);
+
 }
 
-/* Light Theme */
 body.light-theme{
-    background:#f5f5f5;
-    color:#222222dc;
+
+    background:#f4f4f4;
+
+    color:#222;
+
 }
 
 body.light-theme .navbar,
-body.light-theme footer,
-body.light-theme .movie-card,
-body.light-theme .joke-box{
-    background:#ffffff;
-    color:#222;
-}
 
-body.light-theme .nav-links a{
+body.light-theme footer,
+
+body.light-theme .movie-card,
+
+body.light-theme .joke-box,
+
+body.light-theme .contact-form{
+
+    background:#ffffff;
+
     color:#222;
+
 }
 
 body.light-theme .movie-info p,
+
 body.light-theme .footer-content p{
+
     color:#555;
+
 }
 
-#topBtn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:50px;
-    height:50px;
-    border:none;
-    border-radius:50%;
-    background:#ff4d4d;
-    color:white;
-    font-size:20px;
-    cursor:pointer;
-    display:none;
-    z-index:1000;
-    transition:.3s;
+body.light-theme input,
+
+body.light-theme textarea{
+
+    background:#f0f0f0;
+
+    color:#222;
+
 }
 
-#topBtn:hover{
-    transform:scale(1.1);
-}
+/* ===========================
+        LOADER
+=========================== */
 
 #loader{
+
     position:fixed;
+
     inset:0;
-    background:#0f172a;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
+    background:#0f172a;
+
     z-index:9999;
+
 }
 
 .spinner{
-    width:60px;
-    height:60px;
-    border:6px solid #fff;
-    border-top:6px solid #ff4d4d;
+
+    width:70px;
+
+    height:70px;
+
+    border:8px solid rgba(255,255,255,.2);
+
+    border-top:8px solid #ff4d4d;
+
     border-radius:50%;
+
     animation:spin 1s linear infinite;
+
 }
 
 @keyframes spin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
 }
 
-.fav-btn{
-    background:none;
+/* ===========================
+     SCROLL TO TOP BUTTON
+=========================== */
+
+#topBtn{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
     border:none;
-    font-size:24px;
+
+    border-radius:50%;
+
+    background:#ff4d4d;
+
+    color:white;
+
+    font-size:22px;
+
     cursor:pointer;
-    color:#ff4d4d;
-    margin-top:10px;
+
+    display:none;
+
+    box-shadow:0 10px 25px rgba(255,77,77,.4);
+
+    transition:.35s;
+
+    z-index:999;
+
 }
+
+#topBtn:hover{
+
+    transform:translateY(-5px) scale(1.08);
+
+}
+
+/* ===========================
+      FADE ANIMATION
+=========================== */
 
 .fade-in{
+
     opacity:0;
-    transform:translateY(30px);
+
+    transform:translateY(40px);
+
     transition:all .8s ease;
+
 }
 
 .fade-in.show{
+
     opacity:1;
+
     transform:translateY(0);
+
 }
+
+/* ==========================================
+   MOVIE EXPLORER - PREMIUM UI
+   PART 4
+   Responsive Design + Premium Effects
+==========================================*/
+
+
+/* ===================================
+        CUSTOM SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(#ff4d4d,#ff7676);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff2f2f;
+
+}
+
+
+/* ===================================
+        IMAGE HOVER EFFECT
+=================================== */
+
+img{
+
+    transition:.5s;
+
+}
+
+img:hover{
+
+    filter:brightness(110%);
+
+}
+
+
+/* ===================================
+      BUTTON RIPPLE EFFECT
+=================================== */
+
+button{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:50%;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:.5s;
+
+}
+
+button:hover::before{
+
+    width:280px;
+
+    height:280px;
+
+}
+
+
+/* ===================================
+        MOVIE CARD GLOW
+=================================== */
+
+.movie-card:hover{
+
+    border:1px solid rgba(255,77,77,.6);
+
+    box-shadow:
+
+    0 0 15px rgba(255,77,77,.4),
+
+    0 20px 40px rgba(0,0,0,.4);
+
+}
+
+
+/* ===================================
+        FLOATING POSTER
+=================================== */
+
+.movie-card img{
+
+    animation:posterFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes posterFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ===================================
+        HERO TITLE EFFECT
+=================================== */
+
+.hero-content h1{
+
+    background:linear-gradient(
+
+    45deg,
+
+    white,
+
+    #ff4d4d,
+
+    white
+
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+
+/* ===================================
+       MOVIE TITLE EFFECT
+=================================== */
+
+.movie-info h3{
+
+    transition:.4s;
+
+}
+
+.movie-card:hover h3{
+
+    color:#ff4d4d;
+
+}
+
+
+/* ===================================
+        SECTION SPACING
+=================================== */
+
+section{
+
+    margin-top:30px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* ===================================
+        TABLET
+=================================== */
+
+@media(max-width:992px){
+
+.navbar{
+
+flex-direction:column;
+
+gap:20px;
+
+padding:20px;
+
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-content h1{
+
+font-size:45px;
+
+}
+
+.hero-content p{
+
+max-width:100%;
+
+}
+
+.carousel-container{
+
+width:100%;
+
+}
+
+.slide{
+
+height:380px;
+
+}
+
+.movies-container{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+}
+
+.search-box{
+
+flex-direction:column;
+
+}
+
+.search-box input{
+
+width:100%;
+
+}
+
+.search-box button{
+
+width:100%;
+
+}
+
+.contact-form{
+
+padding:35px;
+
+}
+
+}
+
+
+/* ===================================
+        MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+.logo{
+
+font-size:24px;
+
+}
+
+.nav-links{
+
+gap:15px;
+
+}
+
+.nav-links a{
+
+font-size:15px;
+
+}
+
+.hero{
+
+padding:50px 6%;
+
+}
+
+.hero-content h1{
+
+font-size:36px;
+
+}
+
+.hero-content p{
+
+font-size:16px;
+
+}
+
+.hero-btn{
+
+padding:14px 28px;
+
+}
+
+.slide{
+
+height:260px;
+
+}
+
+.carousel-btn{
+
+width:45px;
+
+height:45px;
+
+font-size:22px;
+
+}
+
+.movies-container{
+
+grid-template-columns:1fr;
+
+}
+
+.movie-card img{
+
+height:350px;
+
+}
+
+.search-section h2,
+
+.movies-section h2,
+
+.contact-section h2,
+
+.joke-section h2{
+
+font-size:32px;
+
+}
+
+.joke-box{
+
+padding:30px;
+
+}
+
+.contact-form{
+
+padding:25px;
+
+}
+
+.footer-content h3{
+
+font-size:24px;
+
+}
+
+.footer-content p{
+
+font-size:15px;
+
+}
+
+#themeToggle{
+
+margin-top:10px;
+
+}
+
+}
+
+
+/* ===================================
+      SMALL MOBILE
+=================================== */
+
+@media(max-width:480px){
+
+.hero-content h1{
+
+font-size:28px;
+
+}
+
+.hero-content p{
+
+font-size:15px;
+
+}
+
+.hero-btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+.slide{
+
+height:220px;
+
+}
+
+.movie-card img{
+
+height:300px;
+
+}
+
+.carousel-btn{
+
+width:40px;
+
+height:40px;
+
+font-size:18px;
+
+}
+
+#topBtn{
+
+width:45px;
+
+height:45px;
+
+font-size:18px;
+
+}
+
+.joke-box{
+
+padding:20px;
+
+}
+
+.contact-form{
+
+padding:20px;
+
+}
+
+}
+
+
+/* ===================================
+       HOVER TRANSITIONS
+=================================== */
+
+a,
+button,
+input,
+.movie-card,
+.hero-btn{
+
+transition:.35s ease;
+
+}
+
+
+/* ===================================
+       BOX SHADOWS
+=================================== */
+
+.movie-card,
+.contact-form,
+.joke-box{
+
+box-shadow:
+
+0 12px 35px rgba(0,0,0,.35);
+
+}
+
+
+/* ===================================
+        GLASS EFFECT
+=================================== */
+
+.movie-card,
+
+.contact-form,
+
+.joke-box{
+
+backdrop-filter:blur(18px);
+
+}
+
+
+/* ===================================
+      END OF FILE
+=================================== */
